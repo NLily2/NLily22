@@ -34,7 +34,7 @@ public class VariableMutation {
         boolean j = (j1 % 3 == 0 || j1 % 5 == 0);
         System.out.println(j);
 
-        String k = "Apple"
+        String k = "Apple";
 
     }
 }
