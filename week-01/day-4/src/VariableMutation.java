@@ -1,3 +1,4 @@
+
 public class VariableMutation {
     public static void main(String[] args) {
         int a = 3 + 10;
@@ -27,8 +28,8 @@ public class VariableMutation {
 
         int i1 = 10;
         int i2 = 3;
-        boolean l = (i1 > i2 * i2) && (i1 < i2 * i2 *i2);
-        System.out.println(l);
+        boolean i = (i1 > Math.pow(i2, 2)) && (i1 < Math.pow(i2, 3));
+        System.out.println(i);
 
         int j1 = 1521;
         boolean j = (j1 % 3 == 0 || j1 % 5 == 0);
