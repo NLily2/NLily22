@@ -20,7 +20,6 @@ public class PartyIndicator {
         else if (num1 == 0) {
             System.out.println("Sausage party");
         }
-
     }
 }
 
