@@ -1,12 +1,15 @@
 public class Greet {
     public static void main(String[] args) {
         String al = "Greenfox";
-
-        public static String greet (String text)
-
-
+        String welcome = greet(al);
+        System.out.println(welcome);
 
     }
+        public static String greet (String input) {
+            String greeting = "Greeting dear, " + input + "!";
+            return greeting;
+        }
+
 }
 
 //  From now on, create the usual class wrapper
