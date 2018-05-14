@@ -11,7 +11,6 @@ public class Sum {
     }
 
     public static int sum (int input) {
-        Scanner scanner = new Scanner(System.in);
         int Sum = 0;
         for (int i = 0; i <= input; i++) {
             Sum = Sum + i;
@@ -19,4 +18,3 @@ public class Sum {
         return Sum;
     }
 }
- 
