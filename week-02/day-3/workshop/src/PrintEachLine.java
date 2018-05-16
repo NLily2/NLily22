@@ -12,7 +12,7 @@ public class PrintEachLine {
     try {
     Path filePath = Paths.get("my-file.txt");
       List<String>lines = Files.readAllLines(filePath);
-      for (int i =1; i < lines.size(); i++) {
+      for (int i = 0; i < lines.size(); i++) {
         System.out.println(lines.get(i));
       }
     } catch (IOException e){
