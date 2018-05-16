@@ -7,10 +7,18 @@ public class DivideByZero {
     int divisor = scanner.nextInt();
 
     try {
-      int result = 10 / divisor;
+      int result = divide(divisor);
       System.out.println(result);
     } catch (ArithmeticException e) {
       System.out.println("fail");
     }
+  }
+
+  public static int divide(int number) {
+    if (number == 0) {
+      throw new ArithmeticException("fail");
+    }
+    int num = 10 / number;
+    return num;
   }
 }
