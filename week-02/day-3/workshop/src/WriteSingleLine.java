@@ -6,8 +6,7 @@ import java.util.List;
 
 public class WriteSingleLine {
   public static void main(String[] args) {
-
-    String fileName = "my-file.txt";
+    
     ArrayList<String>content = new ArrayList<>();
     content.add("Németh Lilla");
 
