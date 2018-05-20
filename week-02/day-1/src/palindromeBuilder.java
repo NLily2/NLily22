@@ -1,8 +1,15 @@
+import java.util.Scanner;
+
 public class palindromeBuilder {
     public static void main(String[] args) {
+        //Scanner scanner = new Scanner(System.in);
 
-        String example = "Lili";
+       /* System.out.println("Enter your words: ");
+        String input = "madam szerda";//scanner.next();
+        System.out.println(createPalindrome(input)); */
+        String example = "Lili szerda";
         System.out.println(createPalindrome(example));
+
     }
 public static String createPalindrome (String input) {
         String back = "";
