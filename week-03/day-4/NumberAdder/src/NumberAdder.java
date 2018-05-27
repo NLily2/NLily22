@@ -5,7 +5,6 @@ public class NumberAdder {
   }
 
   public static int AddNumber (int n) {
-    System.out.println(n);
     if (n == 1) {
       return 1;
     } else {
@@ -13,6 +12,3 @@ public class NumberAdder {
     }
   }
 }
-
-// Write a recursive function that
-// takes one parameter: n and adds numbers from 1 to n.
