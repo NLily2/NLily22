@@ -5,6 +5,6 @@ public class Gnirts_Shifter_instances {
     System.out.println(example.charAt(2));
 
     Shifter newexample = new Shifter("newexample", 2);
-    System.out.println(newexample.charAt(4));
+    System.out.println(newexample.charAt(8));
   }
 }

@@ -15,6 +15,9 @@ public class Shifter implements CharSequence{
 
   @Override
   public char charAt(int index) {
+    if (num + index >= expression.length()) {
+      index = index - expression.length();
+    }
     return expression.charAt(num + index);
   }
 
