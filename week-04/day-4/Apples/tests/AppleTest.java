@@ -4,9 +4,13 @@ import static org.junit.Assert.*;
 
 public class AppleTest {
 
+  Apple myObject = new Apple("apple");
+
   @Test
   public void getApple() {
-    Apple myObject = new Apple("apple");
-    assertEquals("apple", myObject.getApple());
+    String expected = "apple";
+    String result = myObject.getApple();
+
+    assertEquals(expected, result);
   }
 }
