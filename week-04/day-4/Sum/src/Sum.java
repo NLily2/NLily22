@@ -4,8 +4,8 @@ public class Sum {
 
   public ArrayList<Integer> listIntegers = new ArrayList<>();
 
-  public void addNewItem(int newItem1){
-    listIntegers.add(newItem1);
+  public void addNewItem(int newItem){
+    listIntegers.add(newItem);
   }
 
   public ArrayList<Integer> getList(){
@@ -13,6 +13,10 @@ public class Sum {
   }
 
   public int returnSum(ArrayList<Integer>listIntegers) {
+    if (listIntegers == null) {
+      return 0;
+    }
+
     int sum = 0;
     for (int i = 0; i < listIntegers.size(); i++) {
       sum = sum + listIntegers.get(i);
