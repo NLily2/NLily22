@@ -6,6 +6,7 @@ public class AppleTest {
 
   @Test
   public void getApple() {
-
+    Apple myObject = new Apple("apple");
+    assertEquals("apple", myObject.getApple());
   }
 }
