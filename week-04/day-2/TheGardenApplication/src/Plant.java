@@ -14,6 +14,12 @@ public class Plant {
     }
   }
 
+  public void getWatered(double waterUsedForWatering){
+    if(waterStatus < waterAmountNeeded){
+      waterStatus = waterStatus + (waterUsedForWatering * waterAbsorbed);
+    }
+  }
+
 
 
 
