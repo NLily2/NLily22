@@ -18,7 +18,7 @@ public class Plant {
     if(waterStatus < waterAmountNeeded){
       waterStatus = waterStatus + (waterUsedForWatering * waterAbsorbed);
     }
-  }
+}
 
 
 
