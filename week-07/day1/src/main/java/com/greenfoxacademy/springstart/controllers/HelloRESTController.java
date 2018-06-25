@@ -1,20 +1,15 @@
 package com.greenfoxacademy.springstart.controllers;
 
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class HelloRESTController {
 
-  static Greeting greeting = new Greeting(1, "Hello, World!");
+  static Greeting greeting = new Greeting(1, "Hello, ");
 
-  @RequestMapping("/greeting")
+  @RequestMapping(value = "/greeting")
   @ResponseBody
-  public static String greeting(){
-    return "id: " + greeting.getId() + " content: " + greeting.getContent();
+  public String greeting(@RequestParam("content") String content){
+    return "id: " + greeting.getId() + " content: " + greeting.getContent() + content + "!";
   }
 }
