@@ -9,7 +9,7 @@ public class HelloRESTController {
 
   @RequestMapping(value = "/greeting")
   @ResponseBody
-  public String greeting(@RequestParam("content") String content){
-    return "id: " + greeting.getId() + " content: " + greeting.getContent() + content + "!";
+  public String greeting(@RequestParam("content") String content, @RequestParam("id") long id){
+    return "id: " + id + " content: " + greeting.getContent() + content + "!";
   }
 }
