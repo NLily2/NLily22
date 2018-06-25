@@ -1,4 +1,4 @@
-package com.greenfoxacademy.springstart.controllers;
+/*package com.greenfoxacademy.springstart.controllers;
 
 public class AtomicLong {
 
@@ -14,4 +14,4 @@ public class AtomicLong {
   public long getId() {
     return id;
   }
-}
+} */

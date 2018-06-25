@@ -14,6 +14,5 @@ public class HelloRESTController {
   @ResponseBody
   public String greeting(@RequestParam(value = "content", defaultValue = "World") String content){
     return "id: " + atomicLong.incrementAndGet() + " content: " + greeting.getContent() + content + "!";
-
   }
 }
