@@ -13,9 +13,12 @@ public class showController {
 
 @RequestMapping("/show")
   public String show(Model model){
-    model.addAttribute("name", bankAccount.getName());
+    /*model.addAttribute("name", bankAccount.getName());
     model.addAttribute("balance", bankAccount.getBalance());
-    model.addAttribute("typeAnimal", bankAccount.getAnimalType());
+    model.addAttribute("typeAnimal", bankAccount.getAnimalType()); */
+    model.addAttribute("bankaccount", bankAccount);
     return "BankAccountFieldsShowing";
   }
 }
+
+// <!p th:text="'Name: ' + ${name} + ' balance: ' + ${balance} + 'Zebra type of animal: ' + ${typeAnimal}"/>
