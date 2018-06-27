@@ -1,8 +1,10 @@
-package com.greenfoxacademy.springstart;
+package com.greenfoxacademy.springstart.services;
 
+import com.greenfoxacademy.springstart.interfaces.MyColor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-class RedColor implements MyColor{
+class RedColor implements MyColor {
 
   @Override
   public void printColor() {
@@ -12,10 +14,12 @@ class RedColor implements MyColor{
 
 @Service
  class BlueColor implements MyColor {
+  @Autowired
+  Printer printer;
 
   @Override
   public void printColor() {
-    System.out.println("It is blue in color...");
+    printer.log("It is blue in color...");
   }
 }
 

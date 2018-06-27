@@ -1,4 +1,4 @@
-package com.greenfoxacademy.springstart;
+package com.greenfoxacademy.springstart.interfaces;
 
 public interface MyColor {
   public void printColor();

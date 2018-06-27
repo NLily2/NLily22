@@ -1,4 +1,6 @@
 package com.greenfoxacademy.springstart;
+import com.greenfoxacademy.springstart.interfaces.MyColor;
+import com.greenfoxacademy.springstart.services.Printer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
