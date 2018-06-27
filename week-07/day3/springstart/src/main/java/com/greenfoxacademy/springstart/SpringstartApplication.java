@@ -9,11 +9,20 @@ public class SpringstartApplication implements CommandLineRunner {
 
   public static void main(String[] args) { SpringApplication.run(SpringstartApplication.class, args);
   }
+
+  @Autowired
+  MyColor color;
+
   @Autowired
   Printer printer;
 
   @Override
   public void run(String... args) throws Exception {
     printer.log("hello");
+    color.printColor();
   }
 }
+
+
+
+
