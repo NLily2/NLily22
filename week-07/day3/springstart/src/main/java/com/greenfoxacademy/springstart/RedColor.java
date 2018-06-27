@@ -2,7 +2,6 @@ package com.greenfoxacademy.springstart;
 
 import org.springframework.stereotype.Service;
 
-@Service
 class RedColor implements MyColor{
 
   @Override
@@ -11,6 +10,7 @@ class RedColor implements MyColor{
   }
 }
 
+@Service
  class BlueColor implements MyColor {
 
   @Override
