@@ -39,7 +39,7 @@
             </tbody>
         </table>
         <form action="/addAccounts" method="post" th:object="${accountNew}">
-            <a class="linkName" th:href="@{/accounts/codeForm}">Name: </a>
+            <label for="name">Name: </label>
             <input type="text" id="name" th:field="*{name}"/>
 
             <label for="balance">Balance: </label>

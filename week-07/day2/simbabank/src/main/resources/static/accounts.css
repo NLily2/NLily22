@@ -56,11 +56,6 @@ td{
 content: '.00 Zebra';
 }
 
-.linkName{
-    color: black;
-    text-decoration: none;
-}
-
 form{
     padding-top: 20px;
     max-width: 60%;

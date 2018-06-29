@@ -47,10 +47,4 @@ public class ShowController {
     accountList.characterAccounts.add(character);
     return "redirect:/accounts";
   }
-
-  @GetMapping("/accounts/codeForm")
-  public String checkCodeForTable(){
-    return "formCode";
-  }
-
 }
