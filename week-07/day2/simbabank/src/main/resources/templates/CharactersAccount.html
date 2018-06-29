@@ -1,10 +1,68 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:form="http://www.w3.org/1999/xhtml">
 <head>
-    <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Getting Started: Serving Web Content</title>
+    <link rel="stylesheet" href="accounts.css"/>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,400" rel="stylesheet">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 </head>
 <body>
-$END$
+    <header>
+        <img src="https://img00.deviantart.net/19fe/i/2016/128/8/0/simba_and_scar_piggy_banks_by_fuzzbird-da1qiuo.jpg">
+        <h2>Bank of Simba</h2>
+    </header>
+    <div class="mainContainer">
+        <table>
+            <thead>
+                <tr>
+                    <th class = "index">Index</th>
+                    <th class = "headName">Name</th>
+                    <th class="headBalance">Balance</th>
+                    <th class="headType">Type of animal</th>
+                    <th class = King>King</th>
+                    <th class = badGoodGuy>Side</th>
+                </tr>
+            </thead>
+            <tbody th:object="${characters}">
+                <tr th:each="account : *{characterAccounts}">
+                    <td th:text="${accountStat.index+1}"></td>
+                    <td th:text="${account.name}"></td>
+                    <td class="balance" th:text="${account.balance}"></td>
+                    <td th:text="${account.animalType}"></td>
+                    <td th:if="${account.isKing} == 'Yes'" th:style="'color: #e6b800'">The King</td>
+                    <td th:unless="${account.isKing} == 'Yes'"></td>
+                    <div th:switch="${account.goodGuy}">
+                        <td th:case="'Good'">good side</td>
+                        <td th:case="'Bad'">dark side</td>
+                    </div>
+                </tr>
+            </tbody>
+        </table>
+        <form action="/addAccounts" method="post" th:object="${accountNew}">
+            <a class="linkName" th:href="@{/accounts/codeForm}">Name: </a>
+            <input type="text" id="name" th:field="*{name}"/>
+
+            <label for="balance">Balance: </label>
+            <input type="number" id="balance" th:field="*{balance}"/>
+
+            <label for="animalType">Type of animal: </label>
+            <input type="text" id="animalType" th:field="*{animalType}"/>
+
+            <label>Is he/she the king?</label>
+            <select id="isKing" th:field="*{isKing}">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+
+            <label>Is he/she a bad or a good guy?</label>
+            <select id="goodGuy" th:field="*{goodGuy}">
+                <option value="Good">Good</option>
+                <option value="Bad">Bad</option>
+            </select>
+
+            <input type="submit" value="Submit Account" />
+        </form>
+    </div>
 </body>
 </html>
+

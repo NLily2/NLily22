@@ -6,34 +6,51 @@ import com.greenfoxacademy.simbabank.models.BankAccount;
 import com.greenfoxacademy.simbabank.models.Character;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMapping;
-
-import java.util.ArrayList;
-import java.util.List;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
 public class ShowController {
 
-  BankAccount bankAccount = new BankAccount("Simba", "2000", "lion");
+  BankAccount bankAccount = new BankAccount("Simba", 2000, "lion", "No", "Yes");
+  AccountsOfCharacters accountList = new AccountsOfCharacters();
+  //static AtomicLong atomicLong = new AtomicLong(1);
 
-  @RequestMapping("/show")
+  @GetMapping("")
+  public String showMainPage(){
+    return "index";
+  }
+
+
+  @GetMapping("/show")
   public String show(Model model) {
-    /*model.addAttribute("name", bankAccount.getName());
-    model.addAttribute("balance", bankAccount.getBalance());
-    model.addAttribute("typeAnimal", bankAccount.getAnimalType()); */
     model.addAttribute("bankaccount", bankAccount);
     return "BankAccountFieldsShowing";
   }
 
-  @RequestMapping("/text")
+  @GetMapping("/text")
   public String submitText(Model model) {
     model.addAttribute("text", "This is an <em>HTML</em> text. <b>Enjoy yourself!</b>");
     return "submit";
   }
 
-  @RequestMapping("/accounts")
+  @GetMapping("/accounts")
     public String showAccounts(Model model){
-    model.addAttribute("characters", new AccountsOfCharacters());
+    model.addAttribute("characters", accountList);
+    model.addAttribute("accountNew", new Character());
     return "CharactersAccount";
     }
+
+  @PostMapping("/addAccounts")
+  public String submitNewAccount(@ModelAttribute Character character){
+    accountList.characterAccounts.add(character);
+    return "redirect:/accounts";
+  }
+
+  @GetMapping("/accounts/codeForm")
+  public String checkCodeForTable(){
+    return "formCode";
+  }
+
 }

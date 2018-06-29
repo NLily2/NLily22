@@ -1,10 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Getting Started: Serving Web Content</title>
+    <link rel="stylesheet" href="accounts.css"/>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,400" rel="stylesheet">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 </head>
 <body>
-$END$
+<table>
+    <thead>
+    <tr>
+        <th class = "headName">Name</th>
+        <th class="headBalance">Balance</th>
+        <th class="headType">Type of animal</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td class = "text"><span class = "name" th:text="${bankaccount.name}"></span></td>
+        <td class = "text"><span class = "currency" th:text="${bankaccount.balance}"></span></td>
+        <td class = "text"><span class = "type" th:text="${bankaccount.animalType}"></span></td>
+    </tr>
+    </tbody>
+</table>
 </body>
 </html>
+

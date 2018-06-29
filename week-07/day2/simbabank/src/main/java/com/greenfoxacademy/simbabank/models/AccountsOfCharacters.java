@@ -5,7 +5,7 @@ import java.util.List;
 
 public class AccountsOfCharacters {
 
-  List<Character> characterAccounts;
+  public List<Character> characterAccounts;
 
   public AccountsOfCharacters() {
     characterAccounts = new ArrayList<>();
@@ -21,11 +21,14 @@ public class AccountsOfCharacters {
   }
 
   public void addCharacters() {
-    characterAccounts.add(new Character("Zazu", "1000", "bird"));
-    characterAccounts.add(new Character("Nala", "800", "lion"));
-    characterAccounts.add(new Character("Zordon", "2000", "lion"));
-    characterAccounts.add(new Character("Rafiki", "3000", "baboon"));
-    characterAccounts.add(new Character("Mufasa", "2200", "lion"));
+    characterAccounts.add(new Character("Zazu", 1000, "hornbill", "No", "Good"));
+    characterAccounts.add(new Character("Scar", 2000, "lion", "No", "Bad"));
+    characterAccounts.add(new Character("Rafiki", 3000, "baboon", "No", "Good"));
+    characterAccounts.add(new Character("Mufasa", 2200, "lion", "Yes", "Good"));
   }
-
 }
+
+// <td th:object=""${index} th:each="indexStat.index"></td>
+//<tbody th:object="${characters}">
+//        <tr th:each="account : *{characterAccounts}">
+//th:text="${charactersStat.index}"
