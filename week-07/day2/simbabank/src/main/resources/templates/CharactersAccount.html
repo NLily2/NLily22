@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org" xmlns:form="http://www.w3.org/1999/xhtml">
 <head>
-    <title>Getting Started: Serving Web Content</title>
+    <title>Accounts of the bank</title>
     <link rel="stylesheet" href="accounts.css"/>
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,400" rel="stylesheet">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
@@ -15,6 +15,7 @@
         <table>
             <thead>
                 <tr>
+                    <a class = linkNameAccount th:href="@{/accounts/codeTable}">Accounts: </a>
                     <th class = "index">Index</th>
                     <th class = "headName">Name</th>
                     <th class="headBalance">Balance</th>
@@ -39,7 +40,7 @@
             </tbody>
         </table>
         <form action="/addAccounts" method="post" th:object="${accountNew}">
-            <label for="name">Name: </label>
+            <a class = linkName th:href="@{/accounts/codeForm}">Name: </a>
             <input type="text" id="name" th:field="*{name}"/>
 
             <label for="balance">Balance: </label>

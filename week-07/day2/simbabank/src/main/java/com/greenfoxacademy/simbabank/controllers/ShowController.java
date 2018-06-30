@@ -47,4 +47,19 @@ public class ShowController {
     accountList.characterAccounts.add(character);
     return "redirect:/accounts";
   }
+
+  @GetMapping("/accounts/codeForm")
+  public String checkCodeForForm(){
+    return "formCode";
+  }
+
+  @GetMapping("/accounts/codeTable")
+  public String checkCodeForTable(){
+    return "tableCode";
+  }
+
+  @GetMapping("/accounts/bye")
+  public String bye(){
+    return "bye";
+  }
 }
