@@ -1,7 +1,7 @@
-package com.greenfoxacademy.todoslist.controllers;
+package com.greenfoxacademy.todo.connectionwithmysql.controllers;
 
 
-import com.greenfoxacademy.todoslist.repositories.TodoRepInt;
+import com.greenfoxacademy.todo.connectionwithmysql.repositories.TodoRepInt;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
