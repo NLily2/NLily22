@@ -33,7 +33,11 @@ public class TodoController {
     return "redirect:/todo/list";
   }
 
-
+  @GetMapping("/{id}/delete")
+  public String delete(@PathVariable("id") Long ID){
+    TodoRep.deleteById(ID);
+    return "redirect:/todo/list";
+  }
 
 }
 
