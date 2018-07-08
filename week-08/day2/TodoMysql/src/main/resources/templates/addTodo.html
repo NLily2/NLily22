@@ -2,13 +2,19 @@
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="/addTodo.css"/>
+    <title>AddTodo</title>
 </head>
 <body>
-<h1>Add new todo</h1>
+<header>
+    <h1>Todo Application</h1>
+</header>
+<div class="mainContainer">
+<h2>Add new todo:</h2>
     <form action="#" th:action="@{/todo/add}" method="post">
         <input type="text" id="newTodo" th:field="${newTodo.title}"/><br>
-        <input type="submit" value="Submit"/>
+        <input type="submit" value="Add new todo"/>
     </form>
+</div>
 </body>
 </html>
