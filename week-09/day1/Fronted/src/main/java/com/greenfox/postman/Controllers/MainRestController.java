@@ -1,11 +1,13 @@
 package com.greenfox.postman.Controllers;
 
+import com.greenfox.postman.Models.AppendA;
 import com.greenfox.postman.Models.Doubled;
 import com.greenfox.postman.Models.ErrorMessage;
 import com.greenfox.postman.Models.Greeting;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -32,4 +34,10 @@ public class MainRestController {
       return (new ErrorMessage("Please provide a title!"));
     }
   }
+
+  @GetMapping("/appenda/{appendable}")
+  public Object appendA(@PathVariable(value="appendable") String appendable) {
+      AppendA appended = new AppendA(appendable);
+      return appended;
+    }
 }
