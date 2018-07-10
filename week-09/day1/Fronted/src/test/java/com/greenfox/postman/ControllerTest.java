@@ -59,4 +59,14 @@ public class ControllerTest {
             .andExpect(content().contentType(contentType))
             .andExpect(jsonPath("$.error", is("Please provide a name!")));
   }
+
+  @Test
+  public void appendA_successful() throws Exception{
+    mockMvc.perform(get("/appenda/kuty")
+            .contentType(MediaType.APPLICATION_JSON))
+            .andExpect(status().isOk())
+            .andExpect(content().contentType(contentType))
+            .andExpect(jsonPath("$.appended", is("kutya")));
+
+  }
 }
