@@ -9,14 +9,16 @@
 
         <table border="1px">
             <thead>
-                <th class="name">Name</th>
-                <th class="city">City</th>
-                <th class="price">Price</th>
-                <th class="longitude">Longitude</th>
-                <th class="lattitude">Lattitude</th>
-                <th class="category">Category</th>
-                <th class="duration">Duration</th>
-                <th class="recommendedAge">Recommended age</th>
+                <tr>
+                    <th class="attrName">Name</th>
+                    <th class="city">City</th>
+                    <th class="price">Price</th>
+                    <th class="longitude">Longitude</th>
+                    <th class="lattitude">Lattitude</th>
+                    <th class="category">Category</th>
+                    <th class="duration">Duration</th>
+                    <th class="recommendedAge">Recommended age</th>
+                </tr>
             </thead>
 
             <tbody>
@@ -34,31 +36,32 @@
         </table>
 
         <form th:action="@{/add}" method="post" th:object="${attraction}">
-            <lablel for="name">Name:</lablel>
-            <input th:type="text" id="name" th:field="*{attrName}"><br>
+            <input type="hidden" th:field="*{id}">
 
-            <lablel for="city">City:</lablel>
-            <input th:type="text" id="city" th:field="*{city}"><br>
+            <label for="name">Name:</label>
+            <input type="text" id="name" th:field="*{attrName}"><br>
 
-            <lablel for="price">Price:</lablel>
-            <input th:type="text" id="price" th:field="*{price}"><br>
+            <label for="city">City:</label>
+            <input type="text" id="city" th:field="*{city}"><br>
 
-            <lablel for="longitude">Longitude:</lablel>
+            <label for="price">Price:</label>
+            <input type="text" id="price" th:field="*{price}"><br>
+
+            <label for="longitude">Longitude:</label>
             <input th:type="text" id="longitude" th:field="*{longitude}"><br>
 
-            <lablel for="lattitude">Lattitude:</lablel>
+            <label for="lattitude">Lattitude:</label>
             <input th:type="text" id="lattitude" th:field="*{lattitude}"><br>
 
-            <lablel for="category">Category:</lablel>
+            <label for="category">Category:</label>
             <input th:type="text" id="category" th:field="*{category}"><br>
 
-            <lablel for="duration">Duration:</lablel>
+            <label for="duration">Duration:</label>
             <input th:type="text" id="duration" th:field="*{duration}"><br>
 
-            <lablel for="recommendedAge">Recommended age:</lablel>
+            <label for="recommendedAge">Recommended age:</label>
             <input th:type="text" id="recommendedAge" th:field="*{recommendedAge}"><br>
 
-            <input type="hidden" th:field="*{id}">
             <input type="submit" value="Elküldés">
         </form>
     </div>

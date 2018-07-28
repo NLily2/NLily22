@@ -23,15 +23,19 @@ public class Attractions {
   public Attractions() {
   }
 
-  public Attractions(String attrName, String city, int price, float longitude, float lattitude, String category, int duration, float recommendedAge) {
+  public Attractions(String attrName) {
+    this.attrName = attrName;
+  }
+
+  public Attractions(String attrName, String city, String category, int price, float longitude, float lattitude, float recommendedAge, int duration) {
     this.attrName = attrName;
     this.city = city;
+    this.category = category;
     this.price = price;
     this.longitude = longitude;
     this.lattitude = lattitude;
-    this.category = category;
-    this.duration = duration;
     this.recommendedAge = recommendedAge;
+    this.duration = duration;
   }
 
   public String getAttrName() {
@@ -39,7 +43,7 @@ public class Attractions {
   }
 
   public void setAttrName(String attrName) {
-    attrName = attrName;
+    this.attrName = attrName;
   }
 
   public String getCity() {
@@ -47,7 +51,7 @@ public class Attractions {
   }
 
   public void setCity(String city) {
-    city = city;
+    this.city = city;
   }
 
   public int getPrice() {
@@ -55,7 +59,7 @@ public class Attractions {
   }
 
   public void setPrice(int price) {
-    price = price;
+    this.price = price;
   }
 
   public float getLongitude() {
@@ -63,7 +67,7 @@ public class Attractions {
   }
 
   public void setLongitude(float longitude) {
-    longitude = longitude;
+    this.longitude = longitude;
   }
 
   public float getLattitude() {
@@ -71,7 +75,7 @@ public class Attractions {
   }
 
   public void setLattitude(float lattitude) {
-    lattitude = lattitude;
+    this.lattitude = lattitude;
   }
 
   public String getCategory() {
@@ -79,7 +83,7 @@ public class Attractions {
   }
 
   public void setCategory(String category) {
-    category = category;
+    this.category = category;
   }
 
   public int getDuration() {
@@ -87,7 +91,7 @@ public class Attractions {
   }
 
   public void setDuration(int duration) {
-    duration = duration;
+    this.duration = duration;
   }
 
   public float getRecommendedAge() {
@@ -95,7 +99,7 @@ public class Attractions {
   }
 
   public void setRecommendedAge(float recommendedAge) {
-    recommendedAge = recommendedAge;
+    this.recommendedAge = recommendedAge;
   }
 
   public int getId() {
