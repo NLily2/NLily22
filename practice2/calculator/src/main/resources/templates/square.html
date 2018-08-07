@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Sum of numbers</title>
+</head>
+<body>
+<p th:object="${selectedNumberById}" th:text="'Your numbers are: ' + *{numOne} + ', ' + *{numTwo} + ', ' + *{numThree} + ', ' + *{numFour}"></p>
+<p th:text="'The squared value of your numbers are: ' + ${squaredNumbers}"></p>
+<a href="http://localhost:8080">back to the homepage</a>
+</body>
+</html>

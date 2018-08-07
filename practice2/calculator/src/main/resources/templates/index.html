@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>MainPage</title>
+</head>
+<body>
+<h1>Calculator</h1>
+<form th:action="@{/addnumber}" th:object="${newNumber}" method="post">
+    <input type="text" th:field="*{numOne}" required>
+    <input type="text" th:field="*{numTwo}" required>
+    <input type="text" th:field="*{numThree}" required>
+    <input type="text" th:field="*{numFour}" required><br>
+    <input type="submit" value="Send">
+</form>
+
+<p th:text="${messageSent}"></p>
+
+<form th:action="@{/sum}" method="post">
+<select name="sum">
+    <option th:each="number : ${numbers}" th:text="${number.id}"></option>
+</select>
+<input type="submit" value = "Sum numbers">
+</form>
+
+<form th:action="@{/square}" method="post">
+    <select name="square">
+        <option th:each="number : ${numbers}" th:text="${number.id}"></option>
+    </select>
+    <input type="submit" value="Square numbers">
+</form>
+
+<form th:action="@{/square}" method="post">
+    <input type="text" name="square">
+    <input type="submit" value="Square numbers">
+</form>
+
+<table border="1px">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Number One</th>
+            <th>Number Two</th>
+            <th>Number Three</th>
+            <th>Number Four</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr th:each="number : ${numbers}">
+            <td th:text="${number.id}"></td>
+            <td th:text="${number.numOne}"></td>
+            <td th:text="${number.numTwo}"></td>
+            <td th:text="${number.numThree}"></td>
+            <td th:text="${number.numFour}"></td>
+            <td><a class="linkToDelete" th:href="@{${number.getId()} + '/delete'}">delete</a></td>
+        </tr>
+    </tbody>
+</table>
+</body>
+</html>
