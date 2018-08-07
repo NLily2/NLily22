@@ -62,10 +62,10 @@ public class NumberServiceImpl implements NumberService {
             + Integer.parseInt(number.getNumThree()) + Integer.parseInt(number.getNumFour());
   }
 
-  @Override
+  /*@Override
   public NumberInput findById(int id) {
     return numberRepo.findById(id);
-  }
+  } */
 
   @Override
   public List<Integer> squareInputs(int id) {
