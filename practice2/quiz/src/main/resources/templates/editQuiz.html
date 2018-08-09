@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>editQuiz</title>
+</head>
+<body>
+<h1>Edit todo</h1>
+<div>
+    <form action = "#" th:action = "@{'/' + ${id} + '/edit'}" method="post" th:object="${quiz}">
+        <label>Question:</label>
+        <input type="text" id="quizToEdit" name="Question" th:field="*{question}"><br>
+
+        <label>First answer:</label>
+        <input type="text" name = "firstAnswer" th:field="*{answer1}"><br>
+
+        <label>Second answer:</label>
+        <input type="text" name="secondAnswer" th:field="*{answer2}"><br>
+
+        <label>Third answer:</label>
+        <input type="text" name="thirdAnswer" th:field="*{answer3}"><br>
+
+        <label>Fourth answer:</label>
+        <input type="text" name="fourthAnswer" th:field="*{answer4}"><br>
+
+        <input type="hidden" name="id" th:field="*{id}">
+
+        <input type="submit" value="Submit">
+    </form>
+</div>
+</body>
+</html>

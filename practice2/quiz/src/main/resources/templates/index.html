@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <title>mainpage</title>
+    </head>
+    <body>
+        <table border="1px">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Question</th>
+                    <th>Answer1</th>
+                    <th>Answer2</th>
+                    <th>Answer3</th>
+                    <th>Answer4</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="quiz : ${quizes}">
+                    <td th:text="${quiz.id}"></td>
+                    <td th:text="${quiz.question}"></td>
+                    <td th:text="${quiz.getAnswer1()}"></td>
+                    <td th:text="${quiz.getAnswer2()}"></td>
+                    <td th:text="${quiz.getAnswer3()}"></td>
+                    <td th:text="${quiz.getAnswer4()}"></td>
+                    <td><a class="linkToEdit" th:href="@{${quiz.id} + '/edit'}">edit</a></td>
+                </tr>
+            </tbody>
+        </table>
+        <a class = linkToAdd th:href="@{/add}">Add new quiz</a>
+    </body>
+</html>

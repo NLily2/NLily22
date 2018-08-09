@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <title>random question</title>
+    </head>
+    <body>
+        <table border="1px">
+            <thead>
+                <tr>
+                    <th>Question</th>
+                    <th>Answer1</th>
+                    <th>Answer2</th>
+                    <th>Answer3</th>
+                    <th>Answer4</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:object="${quizeQuestion}">
+                    <td th:text="*{question}"></td><br>
+                    <td th:text="*{getAnswer1()}"></td>
+                    <td th:text="*{getAnswer2()}"></td><br>
+                    <td th:text="*{getAnswer3()}"></td><br>
+                    <td th:text="*{getAnswer4()}"></td><br>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <form action="#" th:action="@{'/random/' + ${quizeQuestion.id}}" method="post">
+                            <input type="hidden" th:field="${quizeQuestion.answer1}">
+                            <input type="submit" value="choose 1">
+                        </form>
+                    </td>
+                    <td>
+                        <form action="#" th:action="@{'/random/' + ${quizeQuestion.id}}" method="post">
+                                <input type="hidden" th:field="${quizeQuestion.answer2}">
+                                <input type="submit" value="choose 2">
+                        </form>
+                    </td>
+                    <td>
+                        <form action="#" th:action="@{'/random/' + ${quizeQuestion.id}}" method="post">
+                                <input type="hidden" th:field="${quizeQuestion.answer3}">
+                                <input type="submit" value="choose 3">
+                        </form>
+                    </td>
+                    <td>
+                        <form action="#" th:action="@{'/random/' + ${quizeQuestion.id}}" method="post">
+                                <input type="hidden" th:field="${quizeQuestion.answer4}">
+                                <input type="submit" value="choose 4">
+                        </form>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p>Result:</p>
+        <p th:text="${messageResult}"></p>
+    </body>
+</html>

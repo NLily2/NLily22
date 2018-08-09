@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <title>addQuiz</title>
+    </head>
+    <body>
+        <div>
+            <h1>Add a question and four answers:</h1>
+        </div>
+        <div>
+            <form action="#" th:action="@{/add}" method="post">
+                <label>New question:</label>
+                <input type="text" id="newQuestion" th:field="${newQuiz.question}"><br>
+                <label>First answer:</label>
+                <input type="text" id="newAnswer1" th:field="${newQuiz.answer1}"><br>
+                <label>Second answer:</label>
+                <input type="text" id="newAnswer2" th:field="${newQuiz.answer2}"><br>
+                <label>Third answer:</label>
+                <input type="text" id="newAnswer3" th:field="${newQuiz.answer3}"><br>
+                <label>Right answer:</label>
+                <input type="text" id="newAnswer4" th:field="${newQuiz.answer4}"><br>
+                <input type="submit" value="add question">
+            </form>
+        </div>
+    </body>
+</html>
