@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+    <html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <title>mainpage</title>
+    </head>
+    <body>
+        <h1>3x3 Matrix</h1>
+        <div>
+            <form id="form1" action="#" th:action="@{/matrix}" th:object="${matrix}" method="get">
+                <input th:type="text" id="id" name="id">
+                <input type="submit" value="Load matrix #X">
+            </form>
+        </div>
+        <div  th:if="${matrix}" th:object="${matrix}">
+            <form id="form2" th:action ="'/matrix/ ' + *{id}" method="post">
+                <input type="text" th:field="*{m1}" required>
+                <input type="text" th:field="*{m2}" required>
+                <input type="text" th:field="*{m3}" required>
+                <br>
+                <input type="text" th:field="*{m4}" required>
+                <input type="text" th:field="*{m5}" required>
+                <input type="text" th:field="*{m6}" required>
+                <br>
+                <input type="text" th:field="*{m7}" required>
+                <input type="text" th:field="*{m8}" required>
+                <input type="text" th:field="*{m9}" required>
+                <br>
+                <input type="hidden" th:field="*{id}" name="id">
+                <input type="submit" value="Save it">
+            </form>
+        </div>
+    </body>
+</html>
